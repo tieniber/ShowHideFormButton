@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="ShowHideDivButton.widget.ShowHideDivButton" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>ShowHideDivButton</name>
+    <description>A button that shows or hides the nearest div with a given class.</description>
+
+    <icon />
+
+    <properties>
+		<!--<property key="showButtonClass" type="string" required="true" defaultValue="">
+            <caption>Show Button Class</caption>
+            <category>Behavior</category>
+            <description>The CSS class(es) of the button when the content is visible.</description>
+        </property>
+		<property key="collapseButtonClass" type="string" required="true" defaultValue="">
+            <caption>Target CSS Class</caption>
+            <category>Behavior</category>
+            <description>The CSS class(es) of the button when the content is hidden.</description>
+        </property>
+		-->
+
+		<property key="targetButtonClass" type="string" required="true" defaultValue="">
+            <caption>Target CSS Class</caption>
+            <category>Behavior</category>
+            <description>The CSS class of the div that should be a show/hide button.</description>
+        </property>
+		<property key="toggleClass" type="string" required="true" defaultValue="">
+			<caption>Toggle CSS Class</caption>
+			<category>Behavior</category>
+			<description>A class to add/remove from the node with the Target CSS class when clicking on it.</description>
+		</property>
+    </properties>
+</widget>
