@@ -87,9 +87,9 @@ define([
 					mx.ui.openForm(this.tooltipForm, {
 					location: "content",
 					domNode: this._targetNode,
-					context: this.mxcontext,
 					callback: dojoLang.hitch(this, function(form) {
 							this._currentForm = form;
+							this._applyFormContext;
 						})
 					});
 				} else {
@@ -103,6 +103,14 @@ define([
 		_closeForm: function() {
 			this._currentForm = null;
 			domConstruct.empty(this._targetNode);
+		},
+
+		_applyFormContext: function() {
+			if(this._targetNode.children[0] && this._targetNode.children[0].applyContext) {
+				this._targetNode.children[0].applyContext(this._contextObj, lang.hitch(this, function() {
+
+				}));
+			}
 		},
 
         // mxui.widget._WidgetBase.uninitialize is called when the widget is destroyed. Implement to do special tear-down work.

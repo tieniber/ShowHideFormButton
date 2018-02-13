@@ -82,6 +82,14 @@ public class Color
 		return testsuite.proxies.Color.initialize(context, mendixObject);
 	}
 
+	public static java.util.List<testsuite.proxies.Color> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
+	{
+		java.util.List<testsuite.proxies.Color> result = new java.util.ArrayList<testsuite.proxies.Color>();
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//TestSuite.Color" + xpathConstraint))
+			result.add(testsuite.proxies.Color.initialize(context, obj));
+		return result;
+	}
+
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
